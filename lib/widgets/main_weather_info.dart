@@ -23,9 +23,9 @@ class MainWeatherInfo extends ConsumerWidget {
               ),
         ),
         Text(
-          '$currentMainTemp',
+          '$currentMainTemp°',
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 70,
               ),
         ),
@@ -34,18 +34,18 @@ class MainWeatherInfo extends ConsumerWidget {
           children: [
             const Icon(Icons.keyboard_arrow_up_outlined),
             Text(
-              '$currentMaxTemp',
+              '$currentMaxTemp°',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 23,
                   ),
             ),
             const SizedBox(width: 50),
             const Icon(Icons.keyboard_arrow_down_outlined),
             Text(
-              '$currentMinTemp',
+              '$currentMinTemp°',
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 23,
                   ),
             ),
@@ -55,7 +55,7 @@ class MainWeatherInfo extends ConsumerWidget {
         Text(
           currentSkyDes.toUpperCase(),
           style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 28,
                 letterSpacing: 10,
               ),

@@ -27,7 +27,7 @@ class HourlyForecastItem extends ConsumerWidget {
           Text(
             DateFormat.j().format(time),
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.onBackground,
                   fontSize: 18,
                 ),
           ),
@@ -38,9 +38,9 @@ class HourlyForecastItem extends ConsumerWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            temp.toString(),
+            '$temp°',
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.onBackground,
                   fontSize: 22,
                 ),
           ),
@@ -53,7 +53,7 @@ class HourlyForecastItem extends ConsumerWidget {
               Text(
                 '$humidity%',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.onBackground,
                       fontSize: 18,
                     ),
               ),

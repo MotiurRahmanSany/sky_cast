@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sky_cast/controllers/theme_controller.dart';
 import 'package:sky_cast/utilities/helper_widgets.dart';
 import 'package:sky_cast/widgets/settings_item.dart';
 
@@ -10,16 +11,13 @@ class SettingsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        title: Text(
+        title: const Text(
           'Settings',
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-              ),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             addVerticalSpace(5),
             settingSectionTitle('General', context),
@@ -35,9 +33,14 @@ class SettingsScreen extends ConsumerWidget {
               title: 'Theme',
               subtitle: 'System default',
             ),
-            SettingsItem(
-              title: 'Dark theme',
-              subtitle: 'Default',
+            GestureDetector(
+              onTap: () {
+                ref.read(themeProvider.notifier).switchThemes();
+              },
+              child: SettingsItem(
+                title: 'Dark theme',
+                subtitle: 'Default',
+              ),
             ),
             addDivider(context),
             addVerticalSpace(20),

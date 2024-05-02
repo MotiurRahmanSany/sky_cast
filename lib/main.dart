@@ -1,31 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sky_cast/controllers/theme_controller.dart';
 import 'package:sky_cast/screens/home.dart';
 
-final ColorScheme lightColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 196, 196, 192),
-  brightness: Brightness.light,
-);
-
-final ColorScheme darkColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 196, 196, 192),
-  brightness: Brightness.dark,
-);
-
-final ColorScheme activeThemeMode = lightColorScheme;
 void main() => runApp(const ProviderScope(child: MyApp()));
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appTheme = ref.watch(themeProvider.notifier);
+
     return MaterialApp(
       title: 'Sky Cast weather app',
       home: const HomeScreen(),
       theme: ThemeData(
-        colorScheme: activeThemeMode,
+        colorScheme: appTheme.currentTheme,
         textTheme: GoogleFonts.robotoTextTheme(),
       ),
     );

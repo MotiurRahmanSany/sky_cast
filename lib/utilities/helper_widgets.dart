@@ -21,11 +21,14 @@ Widget addVerticalSpace(double height) {
 }
 
 Widget settingSectionTitle(String title, BuildContext context) {
-  return Text(
-    title,
-    textAlign: TextAlign.start,
-    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-          color: const Color.fromARGB(255, 34, 151, 206),
-        ),
+  return Padding(
+    padding: const EdgeInsets.only(left: 55),
+    child: Text(
+      title,
+      textAlign: TextAlign.start,
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            color: const Color.fromARGB(255, 1, 137, 200),
+          ),
+    ),
   );
 }

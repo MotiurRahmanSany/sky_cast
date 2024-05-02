@@ -12,10 +12,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         actions: [
           IconButton(
             onPressed: () {
@@ -33,7 +30,6 @@ class HomeScreen extends ConsumerWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
         child: SingleChildScrollView(
-          // physics: const NeverScrollableScrollPhysics(),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

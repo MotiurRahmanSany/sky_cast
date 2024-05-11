@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sky_cast/controllers/theme_controller.dart';
+import 'package:sky_cast/controllers/theme_provider.dart';
 import 'package:sky_cast/screens/home.dart';
 
 void main() => runApp(const ProviderScope(child: MyApp()));

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsItem extends StatelessWidget {
-  SettingsItem({
+  const SettingsItem({
     super.key,
     this.subtitle,
     this.icon,
@@ -9,8 +9,8 @@ class SettingsItem extends StatelessWidget {
   });
 
   final String title;
-  String? subtitle;
-  IconData? icon;
+  final String? subtitle;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,14 @@ class SettingsItem extends StatelessWidget {
               color: Theme.of(context).colorScheme.onBackground,
             ),
       ),
-      subtitle: Text(
-        subtitle ?? '',
-        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: Theme.of(context).colorScheme.onBackground,
+      subtitle: subtitle == null
+          ? null
+          : Text(
+              subtitle!,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
             ),
-      ),
     );
   }
 }
